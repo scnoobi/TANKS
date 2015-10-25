@@ -1,3 +1,7 @@
 Library/
 Temp/
 ProjectSettings/ProjectVersion.txt
+*.csproj
+obj/
+*.sln
+*.suo
