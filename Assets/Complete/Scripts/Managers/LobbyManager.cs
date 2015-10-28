@@ -7,7 +7,6 @@ namespace Complete
     public class LobbyManager : MonoBehaviour
     {
         List<int> meow = new List<int>();
-        private int number = 0;
         public GameObject playerPrefab;
         private List<int> playersNotInstantiatedNumbers = new List<int>();
         public int amountOfPlayers = 4;
@@ -28,42 +27,28 @@ namespace Complete
             //Everyone is ready. and some1 pressed start.
             //Start the game
 
-            //if (Input.GetButtonDown("Start" + playerNumber))
-            //    GameManager.instance.StartGame();
-
-            //If a new players joins add them to the list
-
-                CheckForPlayerInput();
+            CheckForPlayerInput();
         }
         void CheckForPlayerInput()
         {
-            foreach (var item in playersNotInstantiatedNumbers)
+            foreach (var notInstantiatedNumber in playersNotInstantiatedNumbers)
             {
-                if (Input.GetButtonDown("fire" + item))
+                if (Input.GetButtonDown("Fire" + notInstantiatedNumber))
                 {
                     var clone = Instantiate(playerPrefab);
 
-                    clone.GetComponent<Player>().JustGotInstantiated(number);
-                    playersNotInstantiatedNumbers.Remove(item);
+                    clone.GetComponent<Player>().JustGotInstantiated(notInstantiatedNumber);
+
+                    playersNotInstantiatedNumbers.Remove(notInstantiatedNumber);
+                    break;
                 }
             }
-            //if(Input.GetButtonDown("fire" + number))
-            //{
-                
-            //    var clone = Instantiate(playerPrefab);
-
-            //    clone.GetComponent<Player>().JustGotInstantiated(number);
-
-            //    number++;
-            //    //TODO Add a player with their number. so you can diffenriate what they do.
-            //}
         }
 
-        public void APlayerLeft()
+        public void APlayerLeft(int playerNumber)
         {
-            //TODO
-            //If a player leaves. reduce the number
             //If a player left. then delete that playerprefab.
+            playersNotInstantiatedNumbers.Add(playerNumber);
         }
     }
 }

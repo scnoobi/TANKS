@@ -2238,6 +2238,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a282819e0210964bae7e86941e5b36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 132630, guid: 594df3efdd3ac9348beb80a187a3b872, type: 2}
+  amountOfPlayers: 4
 --- !u!4 &321258812
 Transform:
   m_ObjectHideFlags: 0
@@ -3515,7 +3517,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 513524953}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &513524953
@@ -10457,6 +10470,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1800693093}
+  - 114: {fileID: 1800693094}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -10478,6 +10492,17 @@ Transform:
   - {fileID: 321258812}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1800693094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1800693092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63a124d883634b4d897b245dc03b963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813063868
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,14 +12,16 @@ namespace Complete
         public void JustGotInstantiated(int myPlayerNumber)
         {
             myNumber = myPlayerNumber;
+            Debug.Log("Meow. and my player number is: " + myNumber);
         }
 
         void Update()
         {
             //If a player presses the leave button then say that to lobbymanager
-            if(Input.GetButtonDown("leave" + myNumber))
+            if(Input.GetButtonDown("Leave" + myNumber))
             {
-                LobbyManager.instance.APlayerLeft();
+                LobbyManager.instance.APlayerLeft(myNumber);
+                Destroy(gameObject);
             }
         }
     }

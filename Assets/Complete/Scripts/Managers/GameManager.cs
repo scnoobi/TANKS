@@ -50,7 +50,7 @@ namespace Complete
                 // ... create them, set their player number and references needed for control.
                 m_Tanks[i].m_Instance =
                     Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
-                m_Tanks[i].m_PlayerNumber = i + 1;
+                m_Tanks[i].m_PlayerNumber = i;
                 m_Tanks[i].Setup();
             }
         }
